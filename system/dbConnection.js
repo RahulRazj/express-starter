@@ -4,7 +4,7 @@ const createDBConnection = async () => {
 	try {
 		const options = { keepAlive: true, connectTimeoutMS: 30000, useNewUrlParser: true, useUnifiedTopology: true };
 		if (!process.env.DB_URL) {
-			throw 'DB connection url is missing. Pls contact admin.';
+			throw 'DB connection url is missing.';
 		}
 
 		await mongoose.connect(process.env.DB_URL, options);
